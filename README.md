@@ -1,0 +1,6 @@
+- wallpaper: https://imgur.com/AaiMkmz
+- vim gruvbox: https://github.com/morhetz/gruvbox
+- rofi gruvbox: https://github.com/bardisty/gruvbox-rofi
+- gnome-terminal-colors: https://github.com/metalelf0/gnome-terminal-colors
+- firefox stylish: https://addons.mozilla.org/en-US/firefox/addon/stylish/
+- github dark theme: https://userstyles.org/styles/37035/github-dark
