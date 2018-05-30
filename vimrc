@@ -20,6 +20,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'dylanaraps/wal'
 Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,6 +39,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+set t_ut=
 set termguicolors
 set background=dark
 colorscheme gruvbox
@@ -91,11 +93,6 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 au BufNewFile,BufRead *.py
     \ set textwidth=79
-
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
 
 let python_highlight_all=1
 
