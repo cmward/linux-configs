@@ -6,21 +6,23 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Plugins
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-sensible'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'dylanaraps/wal'
 Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'w0rp/ale'
+Plugin 'psf/black'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,7 +42,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 set t_ut=
-set termguicolors
 set background=dark
 colorscheme gruvbox
 let g:gruvbox_contrast_dark='medium'
@@ -91,9 +92,6 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 " Recognize .md files as markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
-au BufNewFile,BufRead *.py
-    \ set textwidth=79
-
 let python_highlight_all=1
 
 " Vimwiki path
@@ -113,15 +111,19 @@ let g:jedi#popup_on_dot = 1
 let g:jedi#show_call_signatures = 2
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+={SyntasticStatusLineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_quiet_messages = {"type": "style"}
+" set statusline+=%#warningmsg#
+" set statusline+={SyntasticStatusLineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_pylint_args = '-E'
+
+" ALE
+let g:ale_linters = {'python': ['pylint']}
+let g:ale_python_pylint_options = '-E --rcfile=~/.pylintrc'
 
 " tagbar
 let g:tagbar_width = 30
